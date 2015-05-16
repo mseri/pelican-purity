@@ -1,0 +1,34 @@
+<h1 id="purity-ghost-theme">Purity Ghost Theme</h1>
+<p><code>purity</code> is a <a href="http://www.mathjax.org">MathJax</a> ready <a href="http://purecss.io">Pure</a> based theme for <a href="http://github.com/tryghost/ghost/">Ghost</a>. It is already integrated with <a href="https://support.google.com/webmasters/answer/176035?hl=en">microdata</a> for search engine optimization and opengraph for better facebook integration.</p>
+<p>You can see a running version of the dark theme is on my blog <a href="http://ghost.mseri.me">Tales of a Fractal Spectrum</a>.</p>
+<p>Please note that this new version integrates some changes of Ghost 0.4.* and will not work on older installations. <strong>Consider upgrading Ghost to version 0.4.1 before upgrading the theme!</strong></p>
+<h2 id="what-does-the-zip-contain">What does the ZIP contain</h2>
+<p>The zip contains the full theme with a detailed README and two main color schemes: dark and light. They can be easily switched or personalized following the instructions contained in the README.</p>
+<p>It is ready to be integrated with your favorite social networks, ready to be used with google+, disqus or Facebook comments and ready to be integrated with google Analytics. Until this will be made automatic with the introduction of plugins in Ghost, you will find detailed instructions on the README file.</p>
+<p><em>For some of the following operations you need to edit css or hbs files. Use your favourite pure text editor for the purpose. Please avoid Office, LibreOffice/OpenOffice or similar suites.</em></p>
+<h2 id="install-the-theme">Install the theme</h2>
+<p>Decompress the zip file inside the folder <code>content/themes/</code> of your Ghost blog.</p>
+<h2 id="change-color-theme">Change color theme</h2>
+<p>Open the file <code>assets/css/style.css</code> and replace the line <code>@import url(dark.css);</code> with <code>@import(light.css);</code>. To make your own color set, duplicate <code>assets/css/dark.css</code> or <code>assets/css/light.css</code>, edit it (you need to know/study a bit of <a href="http://www.w3schools.com/cssref/pr_text_color.asp">CSS</a>) and replace the line <code>@import url(dark.css);</code> with <code>@import(NAME_OF_YOUR_CUSTOM_COLOR_FILE.css);</code>.</p>
+<h2 id="update-your-social-network-informations">Update your social network informations</h2>
+<p>Open the file <code>default.hbs</code> and look for the following lines</p>
+<pre><code>    &lt;ul class=&quot;social-list&quot;&gt;
+        {{! In the following six lines edit the links between the quotations marks close to href= with the appropriate content }}
+        &lt;li class=&quot;social-item&quot;&gt;&lt;a class=&quot;subscribe icon-twitter&quot; href=&quot;http://www.twitter.com/...&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/li&gt;&amp;nbsp;
+        &lt;li class=&quot;social-item&quot;&gt;&lt;a class=&quot;subscribe icon-facebook&quot; href=&quot;http://www.facebook.com/...&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/li&gt;&amp;nbsp; 
+        &lt;li class=&quot;social-item&quot;&gt;&lt;a class=&quot;subscribe icon-google-plus&quot; href=&quot;http://plus.google.com/...&quot; target=&quot;_blank&quot; rel=&quot;publisher&quot;&gt;&lt;/a&gt;&lt;/li&gt;&amp;nbsp;
+        &lt;li class=&quot;social-item&quot;&gt;&lt;a class=&quot;subscribe icon-github&quot; href=&quot;http://www.github.com/...&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/li&gt;&amp;nbsp;
+        &lt;li class=&quot;social-item&quot;&gt;&amp;nbsp;&lt;/li&gt;
+        &lt;li class=&quot;social-item&quot;&gt;&lt;a class=&quot;subscribe icon-feed&quot; href=&quot;{{@blog.url}}/rss/&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+<p>The <code>icon-SocialNetworkName</code> identifies which icon is used, slightly on its right you see something like <code>href=&quot;A_Link_...&quot;</code>. You should replace the content of the quotation marks with the appropriate link to your social network page, or delete the line if you don't have one. Duplicating those line and editing the name of the icon and the link will add additional social networks, the full list of supported networks is: twitter, google-plus, facebook, linkedin, github, bitbucket, cloud, youtube, flickr, dropbox, tumblr, skype.</p>
+<h2 id="mathjax-support">MathJax support</h2>
+<p>To enable MathJax (if you don't know it, probably you don't need it) it is enough to open the file <code>default.hbs</code> and completely delete the two lines containing the text <code>REMOVE THIS LINE TO ENABLE MATHJAX</code>.</p>
+<h2 id="google-analytics-support">Google Analytics support</h2>
+<p>After having obtained your Account Code from <a href="http://analytics.google.com">analytics.google.com</a>, it is a code of the form <code>UA-12345678-1</code>, open the file <code>default.hbs</code>, completely delete the two lines containing the text <code>REMOVE THIS LINE TO ENABLE GOOGLE ANALYTICS</code> and replace <code>REPLACE_THIS_TEXT_WITH_THE_ACCOUNT_NUMBER_GIVEN_BY_GOOGLE</code> with your account code.</p>
+<h2 id="google-disqus-or-facebook-comments">Google+, Disqus or Facebook comments</h2>
+<p>To set up google+, disqus or facebook comments is enough to open <code>posts.hbs</code>, and remove the appropriate lines at the end of the file (they are marked with <code>REMOVE THIS LINE TO ENABLE ...</code>). For <a href="http://disqus.com">Disqus</a> you additionally need to register to their website and obtain a website identifier. You can add the Comments counter on the index page modifying the code according to <a href="http://blog.reggiesuplido.com/another-way-of-enabling-disqus-on-ghost/">Another way of enabling disqus on Ghost</a>.</p>
+<h2 id="support">Support</h2>
+<p>I will be updating this theme as-needed for as long as possible following your needs and integrating the features added at each new release of Ghost. I will provide general support on getting it setup. I'm unable to guarantee 'lifetime' support or anything of the sort currently however I'll support it for as long as possible.</p>
+<h2 id="why-use-pay-what-you-want">Why use pay-what-you-want?</h2>
+<p>I was inspired by Bios Elemental and decided to try is same experiment. I believe in the open circulation of knowledge and in open-source. I don't want to restrict who can access it, but I still need to eat. If you like this theme and want me to continue work on it and similar projects, please chip in whatever you think it's worth.</p>

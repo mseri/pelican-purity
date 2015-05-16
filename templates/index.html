@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="content" role="main">
+    {% for article in articles_page.object_list %}
+    <article itemscope itemtype="http://schema.org/Article" class="post">
+        <section class="post">
+            <header class="post-header">
+                <h2 itemprop="name" class="post-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                <p class="post-meta"><time itemprop="datePublished" datetime="{{ article.date|strftime('%d %b %Y') }}">{{ article.date|strftime('%d %b %Y') }}</time> under {% for tag in article.tags %}
+                    <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}{% if DISQUS_SITENAME %}
+                    | <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" data-disqus-identifier="{{ article.id }}"> Comments</a>
+                {% endif %}</p>
+            </header>
+            <div itemprop="description" class="post-description">
+                {{ article.summary|striptags }}
+            </div>
+        </section>
+    </article>
+    {% endfor %}
+
+    {% include 'pagination.html' %}
+
+</main>
+{% endblock content %}

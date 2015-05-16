@@ -1,0 +1,50 @@
+{% if DISQUS_SITENAME %}
+<section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE UNCOMMENTING THE THEME * * */
+    var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
+    {% if article %}
+    // make sure to use the post.id as an identifier, 
+    //otherwise disqus will use the pages url per default, 
+    //which might be problematic...
+    var disqus_identifier = '{{ article.id }}';
+    {% endif %}
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    {% raw %}
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    {% endraw %}
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+{% endif %}
+
+{% if GOOGLE_COMMENTS and article %}
+<section class="post-comments">
+    <div class="g-comments" data-href="{{ SITEURL }}/{{ article.url }}" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">Loading Google+ Comments ...</div>
+    <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
+</section>
+{% endif %}
+
+{% if FBCOMMENTS_ID %}{% raw %}
+<section class="post-comments">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ FBCOMMENTS_ID }}";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ {% endraw %}
+
+<div class="fb-comments" data-href="{{ SITEURL }}/{{ article.url }}" data-width="470"></div>
+</section>
+{% endif %}
