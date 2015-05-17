@@ -28,3 +28,5 @@ _Note that for Disqus you may want to open `templates/comments.html` and comment
 
 ## TODO
 This theme does **not** yet implement `archives`, `author`, `category`, `page` templates. Feel free to send a Push Request with the appropriate changes.
+
+This theme does not (yet) include an appropriate `pygments` css file.
