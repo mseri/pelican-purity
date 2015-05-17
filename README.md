@@ -1,6 +1,6 @@
 # Purity Ghost Theme
 
-`purity` is a  [MathJax](http://www.mathjax.org) ready [Pure](http://purecss.io) based theme for [Pelican](). Adapted from the Purity Ghost theme.
+`purity` is a  [MathJax](http://www.mathjax.org) ready [Pure](http://purecss.io) based theme for [Pelican](http://blog.getpelican.com/). Adapted from the [Purity Ghost theme](https://github.com/mseri/purity).
 It is already integrated with [microdata](https://support.google.com/webmasters/answer/176035?hl=en) for search engine optimization and opengraph for better facebook integration.
 
 You can see a running version of the dark theme is on my blog [Tales of a Fractal Spectrum](http://www.mseri.me).
