@@ -2,6 +2,7 @@
 
 {% block content %}
 <main class="content" role="main">
+    {% block pagetitle %}{% endblock pagetitle %}
     {% for article in articles_page.object_list %}
     <article itemscope itemtype="http://schema.org/Article" class="post">
         <section class="post">
