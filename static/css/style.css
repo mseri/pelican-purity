@@ -305,8 +305,9 @@ body,
         margin: 1.2em 0;
     }
     .post-meta {
-        font-size: 90%;
-        margin: 0;
+        font-size: 85%;
+        margin: -2px 0 6px;
+        font-style: italic;
     }
     .post-images {
         margin: 1em 0;
