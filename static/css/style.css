@@ -2,10 +2,12 @@
    0. Includes - Ground zero
    ========================================================================== */
 
-/* Import purecss-0.6 */
-@import url(http://yui.yahooapis.com/pure/0.6.0/pure-min.css);
+/* Import purecss-0.3 */
+@import url(http://yui.yahooapis.com/pure/0.3.0/pure-min.css);
 /* Dark Theme: dark.css; Light Theme: light.css; */
-@import url(dark.css);
+@import url(dark-min.css);
+/* Import pygment styles */
+@import url(pygment-min.css);
 
 /* Import the font file with the icons in it */
 @font-face {
