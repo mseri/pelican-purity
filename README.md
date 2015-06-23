@@ -26,6 +26,11 @@ To set up google+, disqus or facebook comments is enough to set `DISQUS_SITENAME
 
 _Note that for Disqus you may want to open `templates/comments.html` and comment out the line `var disqus_identifier = '{{ article.id }}';`._
 
+## Added basic support for EU Cookies Law
+For additional information check the file `templates/cookieconsent.html` and the used script [Cookie-Consent](https://silktide.com/tools/cookie-consent/).
+
+As it stands now it will just inform the user and point him/her to the page `http://{{ SITEURL }}/privacy-policy`. Enable it with `COOKIECONSENT = True`
+
 ## TODO
 This theme does **not** yet implement `archives`, `author`, `category`, `page` templates. Feel free to send a Push Request with the appropriate changes.
 

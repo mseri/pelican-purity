@@ -1,0 +1,12 @@
+{% if COOKIECONSENT %}
+<!-- cookieconsent2 by Silktide -->
+<script>
+  window.cookieconsent_options = {
+    learnMore: 'More info',
+    link: 'http://{{ SITEURL }}/privacy-policy',
+    theme: 'dark-bottom'
+  };
+</script>
+<script src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js" async></script>
+<!-- End Cookie Consent plugin -->
+{% endif %}

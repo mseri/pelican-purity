@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ page.title|striptags }} - {{ super() }}{% endblock title %}
+
+{% block head_css %}
+    <!--<link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css">-->
+{% endblock %}
+
+{% block content %}
+<main class="content" role="main" id="top-post">
+        <div class="back">
+            <a href="{{ SITEURL }}">&larr;  back to the home page</a>
+        </div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post purity_post">
+
+        <header class="post-header">
+            <h2 itemprop="name" class="post-title big">{{ page.title }}</h2>
+        </header>
+
+        <section class="post-content">
+
+        <div itemprop="articleBody">
+            {{ page.content }}
+        </div>
+        
+        </section>
+
+    </article>
+    
+    <script type="text/javascript">
+        document.getElementById( 'top-post' ).scrollIntoView();
+    </script>
+
+</main>
+{% endblock  %}
